@@ -6,14 +6,16 @@ class Stack_of_websites:
         self.websites = []
         self.size = -1
     def push(self,element):
-        self.websites.insert(0,element)
+        self.websites.append(element)
         self.size += 1
     def pop(self):
+        if self.size < 0:
+            return "No pages"
         self.websites.remove(self.websites[self.size])
         self.size -= 1
     def view(self):
         if self.size < 0:
-            return "No searches"
+            return "No pages"
         for i in self.websites:
             print(i)
     
